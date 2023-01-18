@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+    <style>
+         @keyframes spinInfinite {
+            from {
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .animate{
+            animation-name: spinInfinite;
+            animation-duration: 4s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-timing-function:linear;
+        }
+        img{
+            width: 20%;
+            position: relative;
+            left: 40%;
+            top: 150px;
+        }
+       
+    </style>
+</head>
+<body>
+    <img class="animate" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Aceofspades.svg">
+</body>
+</html>

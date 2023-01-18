@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+            z-index: 1;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: lightblue;
+            height: 50px;
+            padding: 2px;
+        }
+        nav > ul{
+            position: absolute;
+            right: 0;
+        }
+        nav li{
+            font-size: 13pt;
+            display: inline;
+            padding: 15px;
+        }
+        li:hover{
+            background-color: darkblue;
+            border-radius: 18px;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        a li:hover{
+            color: white;
+        }
+        #title{
+            display:inline;
+        }
+        footer{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: #F5EA5A;
+            text-align: center;
+        }
+        aside{
+            margin-top: 50px;
+            display: inline-block;
+            position: relative;
+            width: 65%;
+            left: 35%;
+        }
+        section{
+            top: 50px;
+            position: relative;
+            left: 0;
+            width: 35%;
+            /* display: inline; */
+        }
+        section ul{
+            width: 35%;
+            left: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="https://www.youtube.com/" target="_blank"><li>Youtube</li></a></li>
+            <a href="https://www.instagram.com/" target="_blank"><li>Instagram</li></a></li>
+            <a href="https://stackoverflow.com/" target="_blank"><li>StackOverflow</li></a></li>
+            <a href="https://beta.reactjs.org/" target="_blank"><li>React</li></a></li>
+            <a href="https://leetcode.com/" target="_blank"><li>LeetCode</li></a></li>
+        </ul>
+    </nav>
+    <!-- <section>
+        <ul>
+            <li><a href="#">S</a></li>
+            <li><a href="#">o</a></li>
+            <li><a href="#">m</a></li>
+            <li><a href="#">e</a></li>
+            <li><a href="#">L</a></li>
+            <li><a href="#">i</a></li>
+            <li><a href="#">n</a></li>
+            <li><a href="#">k</a></li>
+            <li><a href="#">s</a></li>
+        </ul>
+    </section> -->
+    <aside>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget consectetur elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sodales orci nec sapien facilisis, eu scelerisque magna vulputate. Vestibulum sed ex nunc. Aliquam erat volutpat. Praesent facilisis, dui sed volutpat faucibus, lacus est eleifend orci, vestibulum tempus erat metus eget dui. Pellentesque nec turpis vel odio imperdiet faucibus a a ante. Suspendisse augue purus, tristique eu turpis at, porttitor fermentum ligula. Donec finibus egestas nunc, sed pellentesque magna tincidunt eu. Donec volutpat dui mi. Vestibulum quis velit vitae sapien interdum volutpat eu a odio. Donec eget vehicula dui.
+            <br>
+            Vivamus tempor orci at est fermentum feugiat a quis turpis. Donec vitae mi porttitor est hendrerit fermentum. Cras id tellus arcu. Nam a bibendum lorem, sed pulvinar dui. Cras venenatis efficitur metus, in sodales est. Duis varius nisi a tempus ultrices. Phasellus finibus tincidunt lacus, vitae luctus orci consequat ut. Nulla sodales porttitor erat, non posuere nunc eleifend at.
+            <br>
+            Nunc lacinia ipsum vel pulvinar elementum. Maecenas ultricies mauris sed nibh commodo faucibus. Donec faucibus sem at semper elementum. Phasellus finibus justo eget facilisis varius. Morbi non facilisis tellus. Fusce quam nisi, elementum id augue accumsan, faucibus efficitur neque. Duis nec lectus tincidunt, interdum arcu non, eleifend mi. Pellentesque sodales id tellus a posuere. Suspendisse et orci efficitur mauris finibus condimentum et at felis. Donec et convallis mi, at eleifend orci. Aliquam rhoncus magna et enim dapibus, id interdum nisi elementum. Mauris nec leo urna.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget consectetur elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sodales orci nec sapien facilisis, eu scelerisque magna vulputate. Vestibulum sed ex nunc. Aliquam erat volutpat. Praesent facilisis, dui sed volutpat faucibus, lacus est eleifend orci, vestibulum tempus erat metus eget dui. Pellentesque nec turpis vel odio imperdiet faucibus a a ante. Suspendisse augue purus, tristique eu turpis at, porttitor fermentum ligula. Donec finibus egestas nunc, sed pellentesque magna tincidunt eu. Donec volutpat dui mi. Vestibulum quis velit vitae sapien interdum volutpat eu a odio. Donec eget vehicula dui.
+            <br>
+            Vivamus tempor orci at est fermentum feugiat a quis turpis. Donec vitae mi porttitor est hendrerit fermentum. Cras id tellus arcu. Nam a bibendum lorem, sed pulvinar dui. Cras venenatis efficitur metus, in sodales est. Duis varius nisi a tempus ultrices. Phasellus finibus tincidunt lacus, vitae luctus orci consequat ut. Nulla sodales porttitor erat, non posuere nunc eleifend at.
+            <br>
+            Nunc lacinia ipsum vel pulvinar elementum. Maecenas ultricies mauris sed nibh commodo faucibus. Donec faucibus sem at semper elementum. Phasellus finibus justo eget facilisis varius. Morbi non facilisis tellus. Fusce quam nisi, elementum id augue accumsan, faucibus efficitur neque. Duis nec lectus tincidunt, interdum arcu non, eleifend mi. Pellentesque sodales id tellus a posuere. Suspendisse et orci efficitur mauris finibus condimentum et at felis. Donec et convallis mi, at eleifend orci. Aliquam rhoncus magna et enim dapibus, id interdum nisi elementum. Mauris nec leo urna.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget consectetur elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sodales orci nec sapien facilisis, eu scelerisque magna vulputate. Vestibulum sed ex nunc. Aliquam erat volutpat. Praesent facilisis, dui sed volutpat faucibus, lacus est eleifend orci, vestibulum tempus erat metus eget dui. Pellentesque nec turpis vel odio imperdiet faucibus a a ante. Suspendisse augue purus, tristique eu turpis at, porttitor fermentum ligula. Donec finibus egestas nunc, sed pellentesque magna tincidunt eu. Donec volutpat dui mi. Vestibulum quis velit vitae sapien interdum volutpat eu a odio. Donec eget vehicula dui.
+            <br>
+            Vivamus tempor orci at est fermentum feugiat a quis turpis. Donec vitae mi porttitor est hendrerit fermentum. Cras id tellus arcu. Nam a bibendum lorem, sed pulvinar dui. Cras venenatis efficitur metus, in sodales est. Duis varius nisi a tempus ultrices. Phasellus finibus tincidunt lacus, vitae luctus orci consequat ut. Nulla sodales porttitor erat, non posuere nunc eleifend at.
+            <br>
+            Nunc lacinia ipsum vel pulvinar elementum. Maecenas ultricies mauris sed nibh commodo faucibus. Donec faucibus sem at semper elementum. Phasellus finibus justo eget facilisis varius. Morbi non facilisis tellus. Fusce quam nisi, elementum id augue accumsan, faucibus efficitur neque. Duis nec lectus tincidunt, interdum arcu non, eleifend mi. Pellentesque sodales id tellus a posuere. Suspendisse et orci efficitur mauris finibus condimentum et at felis. Donec et convallis mi, at eleifend orci. Aliquam rhoncus magna et enim dapibus, id interdum nisi elementum. Mauris nec leo urna.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget consectetur elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sodales orci nec sapien facilisis, eu scelerisque magna vulputate. Vestibulum sed ex nunc. Aliquam erat volutpat. Praesent facilisis, dui sed volutpat faucibus, lacus est eleifend orci, vestibulum tempus erat metus eget dui. Pellentesque nec turpis vel odio imperdiet faucibus a a ante. Suspendisse augue purus, tristique eu turpis at, porttitor fermentum ligula. Donec finibus egestas nunc, sed pellentesque magna tincidunt eu. Donec volutpat dui mi. Vestibulum quis velit vitae sapien interdum volutpat eu a odio. Donec eget vehicula dui.
+            <br>
+            Vivamus tempor orci at est fermentum feugiat a quis turpis. Donec vitae mi porttitor est hendrerit fermentum. Cras id tellus arcu. Nam a bibendum lorem, sed pulvinar dui. Cras venenatis efficitur metus, in sodales est. Duis varius nisi a tempus ultrices. Phasellus finibus tincidunt lacus, vitae luctus orci consequat ut. Nulla sodales porttitor erat, non posuere nunc eleifend at.
+            <br>
+            Nunc lacinia ipsum vel pulvinar elementum. Maecenas ultricies mauris sed nibh commodo faucibus. Donec faucibus sem at semper elementum. Phasellus finibus justo eget facilisis varius. Morbi non facilisis tellus. Fusce quam nisi, elementum id augue accumsan, faucibus efficitur neque. Duis nec lectus tincidunt, interdum arcu non, eleifend mi. Pellentesque sodales id tellus a posuere. Suspendisse et orci efficitur mauris finibus condimentum et at felis. Donec et convallis mi, at eleifend orci. Aliquam rhoncus magna et enim dapibus, id interdum nisi elementum. Mauris nec leo urna.
+        </p>
+    </aside>
+    <footer>
+        <p>Created by Devendra Tarak-21IT3031</p>
+    </footer>
+</body>
+</html>

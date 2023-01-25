@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .heading{
+            color: aqua;
+        }
+        .colr{
+            color: #FC7300;
+        }
+        main{
+            background-color: #00425A;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #byId{
+            color: #1F8A70;
+        }
+        button{
+            padding: 8px;
+            font-size: medium;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        This is paragraph outside <code>main</code> 
+    </h1>
+    <main>
+        This is paragraph inside <code>main</code>
+    </main>
+    <button onclick="changeColorFirstMethod()">First Way! (Tapping into style.color)</button>
+    <button onclick="changeColorSecondMethod()">Second Way! (Using Class)</button>
+    <button onclick = "changeColorThirdMethod()">Third Way! (Using ID)</button>
+    <script>
+        var heading = document.querySelector('h1');
+        const helper = ()=>{
+            heading.removeAttribute("id");
+            heading.style.removeProperty('color');
+        };
+        const changeColorFirstMethod = ()=>{
+            helper();
+            heading.style.color = "#BFDB38";
+        };
+        const changeColorSecondMethod = ()=>{           
+            helper();
+            heading.classList.add('colr');
+        };
+        const changeColorThirdMethod = ()=>{
+            helper();
+            heading.setAttribute("id","byId");
+        }
+    </script>
+</body>
+</html>

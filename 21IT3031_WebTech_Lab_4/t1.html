@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #F7EFE5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Task 1</h1>
+    <button onclick="handleClick()">Click Me!</button>
+    <script>
+        const handleClick = ()=>{
+            var heading = document.querySelector('h1');
+            heading.innerHTML = "This is Heading after the button is clicked!";
+            document.body.style.backgroundColor = "#C3ACD0";
+        }
+    </script>
+</body>
+</html>

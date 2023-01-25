@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Task 3</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .t1{
+            background-color: #C3ACD0;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Task 3</h1>
+    <button onclick="handleClick()">Click Me!</button>
+    <script>
+        const handleClick = ()=>{
+            alert("Before the class attribute");
+            document.body.className = 't1';
+            document.querySelector('h1').innerHTML = "This is heading after the button is clicked"
+            alert("After the class attribute");
+        };
+    </script>
+</body>
+</html>

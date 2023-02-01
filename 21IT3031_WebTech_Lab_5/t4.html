@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        li{
+            border-radius: 4px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 4px;
+            text-align: center;
+            border: 1px black solid;
+        }
+        ul{
+            width: 50%;
+            border: 2px black;
+            list-style: none;
+        }
+        button{
+            position: relative;
+            padding: 8px;
+            left :20px;
+            width: 20%;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="handleClick()">Add Incremented Row</button>
+        <ul id="ul"></ul>
+    </div>
+    <script>
+        const ul = document.querySelector('#ul');
+        const handleClick = () => {
+            if(!(ul.childNodes.length)){
+                var li = document.createElement('li');
+                li.innerText = 0;
+            }
+            else if(ul.childNodes.length == 1){
+                var li = document.createElement('li');
+                li.innerText = 1;
+            }
+            else{
+                var li = document.createElement('li');
+                const le = ul.lastChild;
+                const sle = parseInt(le.previousSibling.innerHTML);
+                li.innerText = parseInt(le.innerHTML) + sle;
+            }
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>

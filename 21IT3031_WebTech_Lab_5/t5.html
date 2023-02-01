@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .wrapper{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .inputs{
+            width: 50vw;
+            height: 200px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .buttons{
+            width: 50vw;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        button{
+            width: 20%;
+            height: 100%;
+            font-size: 20pt;
+        }
+        input[type=text]{
+            width: 40%;
+            height: 15%;
+            text-align: center;
+        }
+        .result{
+            width: 50vw;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inputs">
+            <input type="text" id="firstNum" value="0">
+            <input type="text" id="secondNum" value="0">
+        </div>
+        <div class="buttons">
+            <button type="button" onclick="handleClick(this)">+</button>
+            <button type="button" onclick="handleClick(this)">-</button>
+            <button type="button" onclick="handleClick(this)">x</button>
+            <button type="button" onclick="handleClick(this)">/</button>
+        </div>
+        <div class="result"></div>
+    </div>
+    <script>
+        let result = document.querySelector('.result');
+        const handleClick = (op)=>{
+            num1 = Number.parseInt(document.querySelector('#firstNum').value);
+            num2 = Number.parseInt(document.querySelector('#secondNum').value);
+            if(op.innerHTML == '+') result.innerHTML = "Ans = " + (num1 + num2);
+            else if(op.innerHTML == '-') result.innerHTML = "Ans = " + (num1 - num2);
+            else if(op.innerHTML == 'x') result.innerHTML = "Ans = " + (num1 * num2);
+            else if(op.innerHTML == '/') result.innerHTML = "Ans = " + (num1 / num2);
+        }
+    </script>
+</body>
+</html>

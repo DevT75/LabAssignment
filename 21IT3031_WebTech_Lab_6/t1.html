@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapped">
+            <input type="text" id = "item-name" placeholder="Name of Item">
+            <button id="add-btn">Add</button>
+        </div>
+        <ul id="list"></ul>
+    </div>
+    <script>
+        // const input = document.querySelector("#item-name");
+        // const addButton = document.querySelector(".add-btn");
+        // const shoppingList = document.querySelector(".list");
+
+        // addButton.addEventListener("click", ()=>{
+        //     const item = input.value;
+        //     const li = document.createElement("li");
+        //     li.innerHTML = item;
+        //     shoppingList.appendChild(li);
+        //     input.value = "";
+        // });
+
+        class ShoppingModel{
+            constructor(){
+                this.items = [];
+            }
+            addItems(item){
+                this.items.push(item);
+            }
+        }
+        class ShoppingListView{
+            constructor(){
+                console.log("This is from ShoppingListView");
+            }
+            render(model){
+                const shoppingList = document.querySelector("#list");
+                shoppingList.innerHTML = "";
+                model.items.map((item)=>{
+                    const li = document.createElement('li');
+                    li.innerHTML = item;
+                    shoppingList.appendChild(li);
+                })
+            }
+        }
+
+        var shoppingModel = new ShoppingModel();
+        var shoppingListview = new ShoppingListView();
+        const addItems = ()=>{
+            const input = document.querySelector("#item-name");
+            const item = input.value;
+            shoppingModel.addItems(item);
+            shoppingListview.render(shoppingModel);
+            input.value = "";
+        }
+        document.querySelector("#add-btn").addEventListener('click',()=>{
+            addItems();
+        })
+    </script>
+</body>
+</html>

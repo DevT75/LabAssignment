@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: blanchedalmond;
+        }
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding-top: 50px;
+        }
+        .wrapped{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            /* height: 100vh; */
+        }   
+        ul{
+            list-style-type: none;
+            width: 45%;
+        }
+        ul li{
+            padding: 5px;
+            text-align: start;
+        }
+        input[type=text]{
+            width: 60%;
+            padding: 10px;
+        }
+        #add-btn{
+            padding: 10px;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapped">
+            <input type="text" id = "item-name" placeholder="Name of Item">
+            <button id="add-btn">Add</button>
+        </div>
+        <ul id="list"></ul>
+    </div>
+    <script>
+        // const input = document.querySelector("#item-name");
+        // const addButton = document.querySelector(".add-btn");
+        // const shoppingList = document.querySelector(".list");
+
+        // addButton.addEventListener("click", ()=>{
+        //     const item = input.value;
+        //     const li = document.createElement("li");
+        //     li.innerHTML = item;
+        //     shoppingList.appendChild(li);
+        //     input.value = "";
+        // });
+
+        class ShoppingModel{
+            constructor(){
+                this.items = JSON.parse(localStorage.getItem('items')) || [];
+                console.log(this.items);
+            }
+            addItems(item){
+                this.items.push(item);
+                localStorage.setItem('items',JSON.stringify(this.items));
+            }
+        }
+        class ShoppingListView{
+            constructor(){
+                console.log("This is from ShoppingListView");
+            }
+            render(model){
+                const shoppingList = document.querySelector("#list");
+                shoppingList.innerHTML = "";
+                // console.log(model.items);
+                model.items.map((item)=>{
+                    const li = document.createElement('li');
+                    li.innerHTML = item;    
+                    shoppingList.appendChild(li);
+                })
+            }
+        }
+
+        var shoppingModel = new ShoppingModel();
+        var shoppingListview = new ShoppingListView();
+        const addItems = ()=>{
+            const input = document.querySelector("#item-name");
+            const item = input.value;
+            shoppingModel.addItems(item);
+            shoppingListview.render(shoppingModel);
+            input.value = "";
+        }
+
+        const showPrevItems = ()=>{
+            shoppingListview.render(shoppingModel);
+            // console.log(shoppingModel.items);
+        }
+
+        document.addEventListener("load",showPrevItems());
+
+        // document.addEventListener("load",()=>{
+        //     // showPrevItems();
+        //     console.log("On Reload");
+        //     // console.log(shoppingModel.items);
+        // })
+        document.querySelector("#add-btn").addEventListener('click',()=>{
+            addItems();
+        })
+    </script>
+</body>
+</html>

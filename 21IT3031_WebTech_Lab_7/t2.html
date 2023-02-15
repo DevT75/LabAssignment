@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: burlywood;
+        }
+        .wrapper{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #counter{
+            margin: 10px;
+            font-size: 50px;
+        }
+        button{
+            padding: 10px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="counter"></div>
+        <button id="button">Click Me</button>
+    </div>
+    <script>
+        const showCount = ()=>{
+            var count = parseInt(JSON.parse(localStorage.getItem("count")) || 0);
+            count = count + 1;
+            localStorage.setItem("count",JSON.stringify(count));
+            document.querySelector("#counter").innerHTML = count;
+        }
+        document.addEventListener("load",showCount());
+        document.querySelector("#button").addEventListener("click",()=>showCount());
+    </script>
+</body>
+</html>
